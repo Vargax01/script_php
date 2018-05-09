@@ -5,7 +5,7 @@ cont=$(($cont+1))
 carpeta_proyecto=`echo $git_url | cut -d"/" -f$cont`
 if [ -d /var/www/$carpeta_proyecto ];
 then
-	rm -r /var/www/$carpeta_proyecto
+	sudo rm -r /var/www/$carpeta_proyecto
 fi
 git clone $git_url /var/www/$carpeta_proyecto
 sudo chmod -R 777 /var/www/$carpeta_proyecto
