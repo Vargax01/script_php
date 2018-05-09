@@ -21,5 +21,5 @@ if [ ! -f /etc/apache2/sites-enabled/$site_apache ];
 then
 	sudo cp template-site.conf.tmp /etc/apache2/sites-enabled/$site_apache
 fi
-a2ensite $site_apache
-systemctl restart apache2
+sudo a2ensite $site_apache
+sudo systemctl restart apache2
