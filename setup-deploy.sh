@@ -10,8 +10,8 @@ fi
 git clone $git_url /var/www/$carpeta_proyecto
 sudo chmod -R 777 /var/www/$carpeta_proyecto
 project_name=$carpeta_proyecto
-dns=`/home/ubuntu/script_php/json-bash.sh DNS | cut -d" " -f2`
-site_apache=`/home/ubuntu/script_php/json-bash.sh SITE_APACHE | cut -d" " -f2`
+dns=`/home/ubuntu/script_php/json-bash.sh DNS $project_name | cut -d" " -f2`
+site_apache=`/home/ubuntu/script_php/json-bash.sh SITE_APACHE $project_name | cut -d" " -f2`
 cp template-site.conf template-site.conf.tmp
 sed -i 's/$PROJECT_NAME/'$project_name'/g' template-site.conf.tmp
 sed -i 's/$SERVER_NAME/'$dns'/g' template-site.conf.tmp

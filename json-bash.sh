@@ -4,7 +4,7 @@ function jsonval {
     echo ${temp##*|}
 }
 
-json=`cat params.json.ex`
+json=`cat /var/www/$2/params.json`
 prop=$1
 picurl=`jsonval`
 echo $picurl
