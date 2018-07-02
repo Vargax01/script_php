@@ -8,6 +8,8 @@ then
 	sudo rm -r /var/www/$carpeta_proyecto
 fi
 git clone $git_url /var/www/$carpeta_proyecto
+cd /var/www/$carpeta_proyecto
+git checkout despliegue
 sudo chmod -R 777 /var/www/$carpeta_proyecto
 project_name=$carpeta_proyecto
 dns=`/home/ubuntu/script_php/json-bash.sh DNS $project_name | cut -d" " -f2`
