@@ -12,8 +12,8 @@ cd /var/www/$carpeta_proyecto
 git checkout despliegue
 sudo chmod -R 777 /var/www/$carpeta_proyecto
 project_name=$carpeta_proyecto
-dns=`/home/ubuntu/script_php/json-bash.sh DNS $project_name | cut -d" " -f2`
-site_apache=`/home/ubuntu/script_php/json-bash.sh SITE_APACHE $project_name | cut -d" " -f2`
+dns=`/home/ubuntu/script_php/json-bash.sh DNS /var/www/$project_name/params.json | cut -d" " -f2`
+site_apache=`/home/ubuntu/script_php/json-bash.sh SITE_APACHE /var/www/$project_name/params.json | cut -d" " -f2`
 cp /home/ubuntu/script_php/template-site.conf /home/ubuntu/script_php/template-site.conf.tmp
 sed -i 's/$PROJECT_NAME/'$project_name'/g' /home/ubuntu/script_php/template-site.conf.tmp
 sed -i 's/$SERVER_NAME/'$dns'/g' /home/ubuntu/script_php/template-site.conf.tmp
